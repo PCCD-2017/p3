@@ -1,5 +1,7 @@
 /*
  * Ejercicio 1
+ *
+ * Breve apunte: Ejecutar con privilegios de superusuario.
  */
 
 #include <sys/shm.h>
@@ -36,7 +38,7 @@ int main(int argc, char *argv[]) {
          *
          * devuelve un entero, que es un puntero a la zona de memoria en cuestión.
          */
-        if((dir_memCompartida = (int *) shmat(shmid, NULL, 0)) == -1){
+        if((dir_memCompartida = shmat(shmid, NULL, 0)) == -1){
             perror("Hubo un error al ejecutar shmat.");
             exit(1);
         }else{
