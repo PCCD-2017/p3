@@ -8,7 +8,7 @@
 
 int main(int argc, char* argv[]){
     //TODO escribir proceso que libere zona de memoria compartida
-    key_t key = 88888;
+    key_t key = 99999;
     int segmento;
     system("clear");
     if((segmento=shmget(key, NULL, 0))==-1){
