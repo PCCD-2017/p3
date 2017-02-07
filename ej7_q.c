@@ -11,12 +11,14 @@ int quiere_p = 0;
 int quiere_q = 0;
 
 int main(int argc, char *argv[]) {
-    int shmid_p, shmid_q;
+    int shmid_p, shmid_q, segmento;
     key_t key_p = 88888;
     key_t key_q = 99999;
     int *dir_memCompartida_p;
     int *dir_memCompartida_q;
     char input[32];
+    segmento=shmget(key_q, NULL, 0);
+    shmctl(segmento,IPC_RMID,(struct shmid_ds *)NULL);
     shmget(key_q, sizeof(int), IPC_CREAT);
     if ((shmid_q = shmget(key_q, NULL, 0)) == -1) {
         perror("Hubo un error al ejecutar shmget.");

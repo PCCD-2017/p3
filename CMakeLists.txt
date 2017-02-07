@@ -10,6 +10,8 @@ add_executable(ej5a ej5_a.c)
 add_executable(ej5b ej5_b.c)
 add_executable(ej6p ej6_p.c)
 add_executable(ej6q ej6_q.c)
+add_executable(ej7p ej7_p.c)
+add_executable(ej7q ej7_q.c)
 set(
         CMAKE_RUNTIME_OUTPUT_DIRECTORY
         ${CMAKE_SOURCE_DIR}/out
